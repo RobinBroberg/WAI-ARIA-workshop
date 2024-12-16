@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body class="bg-slate-200 items-center min-h-screen grid grid-cols-3">
+    <section class="text-center justify-center flex">
+      <div
+        id="accessibleModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+        aria-hidden="true"
+        class="box-border p-4 border-solid border border-black absolute bg-white top-1/2 transform -translate-y-1/2 hidden rounded-lg h-96 w-96 flex-col justify-between self-center"
+      >
+        <h2 id="modalTitle">Example of accessible modalwindow</h2>
+        <p>Here is some text in the modelwindow.</p>
+        <button
+          id="closeModalBtn"
+          class="py-2 px-3 bg-blue-300 rounded-xl self-center w-auto"
+        >
+          Close
+        </button>
+      </div>
+      <button
+        id="openModalBtn"
+        class="py-3 px-4 bg-slate-500 rounded-xl font-semibold"
+      >
+        Open
+      </button>
+    </section>
+
+    <section class="text-center justify-center flex">
+      <dialog
+        id="accessibleDialog"
+        aria-labelledby="dialogTitle"
+        class="box-border p-4 border-solid border border-black absolute bg-white rounded-lg h-96 w-96 flex-col justify-between"
+      >
+        <h2 id="dialogTitle">
+          Example of accessible modalwindow with &lt;dialog&gt;
+        </h2>
+        <p>Here is the content of the modelwindow.</p>
+        <button
+          id="closeDialogBtn"
+          class="py-2 px-3 bg-blue-300 rounded-xl self-center w-auto"
+        >
+          Close
+        </button>
+      </dialog>
+      <button
+        id="openDialogBtn"
+        class="py-3 px-4 bg-slate-500 rounded-xl font-semibold"
+      >
+        Open
+      </button>
+    </section>
+
+    <!-- Fördelarna med att använda dialog är att man automatiskt får med mycket
+    funktioner, tex behöver man inte andvända hidden och istället använda
+    showModal och close. Dialogen blir automatiskt centerad på skärmen. Esc
+    stänger dialogen utan att man behöver lägga till funktionalitet för det. Man
+    behöver inte sätta role="dialog" och inte heller lägga till aria-modal då en
+    dialog redan ses som en modal av screen readers.  
+    Dessutom hanteras fokus automatiskt, både inom dialogen och tillbaka till
+    knappen som öppnade dialogen.-->
+
+    <section class="relative flex text-center h-auto">
+      <button
+        id="menuButton"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-controls="menuContent"
+        class="py-3 px-4 bg-slate-500 text-white rounded-lg font-semibold self-center"
+      >
+        Menu
+      </button>
+      <nav
+        id="menuContent"
+        role="menu"
+        hidden
+        class="top-full mt-2 left-0 bg-white shadow-lg border border-gray-300 rounded-lg font-semibold"
+      >
+        <ul role="none" class="text-left flex-row flex">
+          <li role="none" class="py-2 px-4 hover:bg-gray-100">
+            <a role="menuitem" href="#">Home</a>
+          </li>
+          <li role="none" class="py-2 px-4 hover:bg-gray-100">
+            <a role="menuitem" href="#">About</a>
+          </li>
+          <li role="none" class="py-2 px-4 hover:bg-gray-100">
+            <a role="menuitem" href="#">Services</a>
+          </li>
+          <li role="none" class="py-2 px-4 hover:bg-gray-100">
+            <a role="menuitem" href="#">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+
+    <script src="code.js"></script>
+  </body>
+</html>
