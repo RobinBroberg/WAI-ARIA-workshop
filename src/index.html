@@ -27,7 +27,9 @@
       </div>
       <button
         id="openModalBtn"
-        class="py-3 px-4 bg-slate-500 rounded-xl font-semibold"
+        aria-controls="accessibleModal"
+        aria-expanded="false"
+        class="py-3 px-4 bg-slate-500 text-white rounded-xl font-semibold"
       >
         Open
       </button>
@@ -52,7 +54,7 @@
       </dialog>
       <button
         id="openDialogBtn"
-        class="py-3 px-4 bg-slate-500 rounded-xl font-semibold"
+        class="py-3 px-4 bg-slate-500 text-white rounded-xl font-semibold"
       >
         Open
       </button>
@@ -67,7 +69,7 @@
     Dessutom hanteras fokus automatiskt, både inom dialogen och tillbaka till
     knappen som öppnade dialogen.-->
 
-    <section class="relative flex text-center h-auto">
+    <section class="flex text-center h-auto">
       <button
         id="menuButton"
         aria-haspopup="true"
@@ -81,7 +83,7 @@
         id="menuContent"
         role="menu"
         hidden
-        class="top-full mt-2 left-0 bg-white shadow-lg border border-gray-300 rounded-lg font-semibold"
+        class="bg-white shadow-lg border border-gray-300 rounded-lg font-semibold"
       >
         <ul role="none" class="text-left flex-row flex">
           <li role="none" class="py-2 px-4 hover:bg-gray-100">

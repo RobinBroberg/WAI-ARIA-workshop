@@ -5,19 +5,20 @@ const modal = document.getElementById("accessibleModal");
 openModalBtn.addEventListener("click", () => {
   modal.classList.remove("hidden");
   modal.classList.add("flex");
-  modal.setAttribute("aria-hidden", "false");
+  openModalBtn.setAttribute("aria-expanded", "true");
   closeModalBtn.focus();
 });
 
 closeModalBtn.addEventListener("click", () => {
   modal.classList.add("hidden");
-  modal.setAttribute("aria-hidden", "true");
+  openModalBtn.setAttribute("aria-expanded", "false");
   openModalBtn.focus();
 });
 
 modal.addEventListener("keydown", (e) => {
   if (!modal.classList.contains("hidden") && e.key === "Escape") {
     modal.classList.add("hidden");
+    openModalBtn.setAttribute("aria-expanded", "false");
     openModalBtn.focus();
   }
 });
